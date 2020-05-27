@@ -1,0 +1,28 @@
+Assignment 2 Report
+
+Name: Prithvi Sreenivasan
+
+1. Describe how you evaluated your baseline and advanced features:
+
+I used the first 75% of the data (0001.csv through 0807.csv) as the training data,
+and the last 25% of the data (0808.csv through 1076.csv) as the development data.
+
+2. Accuracy of baseline features during your evaluation:
+
+71.91%
+
+3. Describe your advanced feature set:
+
+I used the concept of bigrams for tokens and pos tags. 
+For the first token and pos tag of an utterance, I included the features token|BOS and pos|BOS
+For the last token and pos tag of an utterance, I included the features EOS|token and EOS|pos
+For every token and pos tag, except the first, I included the features token|prev_token and pos|prev_pos
+
+4. If you tried and rejected alternate advanced feature sets, please describe them:
+
+I tried omitting punctuation only tokens and rejected it.
+I replaced pos tags for punctuation only tokens with a feature called PUNCTUATION and rejected it.
+
+5. Accuracy of advanced features was:
+
+73.81%
